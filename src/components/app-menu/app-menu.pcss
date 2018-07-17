@@ -1,0 +1,93 @@
+@import 'animations.pcss';
+@import 'colors.pcss';
+
+app-menu {
+  width: 0;
+  height: 0;
+  transition: width var(--animationDuration) var(--animationTiming);
+
+  & > .container {
+    height: 100%;
+    width: 290px;
+    box-sizing: border-box;
+    background-color: var(--midnight);
+    position: fixed;
+    top: 64px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform var(--animationDuration) var(--animationTiming);
+    z-index: 2;
+    box-shadow:
+      var(--shadowColor) 0 1px 6px,
+      var(--shadowColor) 0 1px 4px;
+
+    & .item {
+      border: none;
+      display: block;
+      font-size: 16px;
+      line-height: 48px;
+      background-color: transparent;
+      color: rgb(183, 192, 205);
+      width: 100%;
+      height: 48px;
+      box-sizing: border-box;
+      padding: 0 16px;
+      cursor: pointer;
+      text-align: left;
+      outline: none;
+      box-shadow: none;
+      margin: 0;
+      transition:
+        background-color var(--animationDuration) var(--animationTiming),
+        color var(--animationDuration) var(--animationTiming);
+
+      &:hover {
+        background-color: rgb(29, 37, 49);
+        color: rgb(255, 255, 255);
+      }
+
+      & .icon {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin: -14px 38px 0 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  & > .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    background-color: var(--overlayColor);
+    cursor: pointer;
+  }
+
+  &.visible {
+    width: 260px;
+    height: calc(100vh - 64px);
+
+    & .container {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  app-menu {
+    grid-area: content;
+
+    &.visible {
+      width: 100vw;
+
+      & .overlay {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+}

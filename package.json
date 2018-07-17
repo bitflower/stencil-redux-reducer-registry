@@ -11,7 +11,12 @@
   },
   "dependencies": {
     "@stencil/core": "^0.10.7",
-    "@stencil/router": "^0.2.5"
+    "@stencil/redux": "0.0.4",
+    "@stencil/router": "^0.2.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-reducer-registry": "0.0.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "@types/jest": "^21.1.10",

@@ -25,6 +25,7 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@stencil/redux';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 
@@ -59,6 +60,39 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppMenu {
+
+    }
+  }
+
+  interface HTMLAppMenuElement extends StencilComponents.AppMenu, HTMLStencilElement {}
+
+  var HTMLAppMenuElement: {
+    prototype: HTMLAppMenuElement;
+    new (): HTMLAppMenuElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-menu': HTMLAppMenuElement;
+  }
+  interface ElementTagNameMap {
+    'app-menu': HTMLAppMenuElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-menu': JSXElements.AppMenuAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppMenuAttributes extends HTMLAttributes {
 
     }
   }

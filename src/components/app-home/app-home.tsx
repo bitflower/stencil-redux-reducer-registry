@@ -22,6 +22,12 @@ export class AppHome {
             Profile page
           </button>
         </stencil-route-link>
+
+        <stencil-route-link url='/new-reducer'>
+          <button>
+            New component with reducer
+          </button>
+        </stencil-route-link>
       </div>
     );
   }
